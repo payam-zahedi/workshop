@@ -1,8 +1,12 @@
-// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:result/src/align.dart';
+import 'package:result/src/column.dart';
 import 'package:result/src/container.dart';
+import 'package:result/src/icon.dart';
+import 'package:result/src/image.dart';
 import 'package:result/src/padding.dart';
+import 'package:result/src/row.dart';
 import 'package:result/src/text.dart';
 
 void main() {
@@ -35,7 +39,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -99,42 +102,70 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
             child: ListTile(
               onTap: () {
-                pushTo('Container Widget', LearnContainer());
+                pushTo('Align Widget', LearnAlign());
               },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
                 side: BorderSide(color: Colors.grey, width: 2),
               ),
               tileColor: Colors.amber.shade200,
-              title: Text('Container Widget'),
+              title: Text('Align Widget'),
             ),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
             child: ListTile(
               onTap: () {
-                pushTo('Container Widget', LearnContainer());
+                pushTo('Icon Widget', LearnIcon());
               },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
                 side: BorderSide(color: Colors.grey, width: 2),
               ),
               tileColor: Colors.amber.shade200,
-              title: Text('Container Widget'),
+              title: Text('Icon Widget'),
             ),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
             child: ListTile(
               onTap: () {
-                pushTo('Container Widget', LearnContainer());
+                pushTo('Image Widget', LearnImage());
               },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
                 side: BorderSide(color: Colors.grey, width: 2),
               ),
               tileColor: Colors.amber.shade200,
-              title: Text('Container Widget'),
+              title: Text('Image Widget'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+            child: ListTile(
+              onTap: () {
+                pushTo('Row Widget', LearnRow());
+              },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                side: BorderSide(color: Colors.grey, width: 2),
+              ),
+              tileColor: Colors.amber.shade200,
+              title: Text('Row Widget'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+            child: ListTile(
+              onTap: () {
+                pushTo('Column Widget', LearnColumn());
+              },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                side: BorderSide(color: Colors.grey, width: 2),
+              ),
+              tileColor: Colors.amber.shade200,
+              title: Text('Column Widget'),
             ),
           ),
         ],
