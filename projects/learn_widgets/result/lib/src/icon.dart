@@ -5,6 +5,16 @@ class LearnIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      width: 200,
+      height: 200,
+      alignment: Alignment.center,
+      color: Colors.blue,
+      child: Icon(
+        Icons.camera_alt,
+        size: 46,
+        color: Colors.red,
+      ),
+    );
   }
 }

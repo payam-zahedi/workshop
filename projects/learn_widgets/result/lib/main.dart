@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:result/src/align.dart';
+import 'package:result/src/center.dart';
 import 'package:result/src/column.dart';
 import 'package:result/src/container.dart';
 import 'package:result/src/icon.dart';
@@ -102,7 +102,21 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
             child: ListTile(
               onTap: () {
-                pushTo('Align Widget', LearnAlign());
+                pushTo('Center Widget', LearnCenter(), isCenter: false);
+              },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                side: BorderSide(color: Colors.grey, width: 2),
+              ),
+              tileColor: Colors.amber.shade200,
+              title: Text('Center Widget'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+            child: ListTile(
+              onTap: () {
+                pushTo('Align Widget', LearnAlign(), isCenter: false);
               },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -201,12 +215,13 @@ class PageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget content = child;
+
+    if (isCentered) content = Center(child: content);
+
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: Align(
-        alignment: isCentered ? Alignment.center : Alignment.topLeft,
-        child: child,
-      ),
+      body: content,
     );
   }
 }

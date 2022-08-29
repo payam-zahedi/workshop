@@ -16,6 +16,7 @@ class LearnContainer extends StatelessWidget {
           color: Colors.white,
           fontSize: 24,
         ),
+        textAlign: TextAlign.center,
       ),
     );
   }

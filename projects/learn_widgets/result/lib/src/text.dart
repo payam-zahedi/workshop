@@ -11,6 +11,7 @@ class LearnText extends StatelessWidget {
         color: Colors.red,
         fontSize: 32,
       ),
+      textAlign: TextAlign.center,
     );
   }
 }

@@ -5,6 +5,22 @@ class LearnAlign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: Container(
+        width: 200,
+        height: 200,
+        alignment: Alignment.center,
+        color: Colors.blue,
+        child: Text(
+          "I'm have bottomRight alignment",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
   }
 }
