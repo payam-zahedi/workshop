@@ -5,6 +5,13 @@ class LearnButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ElevatedButton(
+      onPressed: onButtonPressed,
+      child: Text("Press Me"),
+    );
+  }
+
+  void onButtonPressed() {
+    print("Button was pressed");
   }
 }

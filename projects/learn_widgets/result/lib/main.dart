@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:result/src/align.dart';
+import 'package:result/src/button.dart';
 import 'package:result/src/center.dart';
 import 'package:result/src/column.dart';
 import 'package:result/src/container.dart';
@@ -39,16 +40,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text('Learn Widgets Project'),
       ),
       body: ListView(
@@ -178,6 +171,20 @@ class _HomePageState extends State<HomePage> {
               ),
               tileColor: Colors.amber.shade200,
               title: Text('Column Widget'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+            child: ListTile(
+              onTap: () {
+                pushTo('Button Widget', LearnButton());
+              },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                side: BorderSide(color: Colors.grey, width: 2),
+              ),
+              tileColor: Colors.amber.shade200,
+              title: Text('Button Widget'),
             ),
           ),
         ],
