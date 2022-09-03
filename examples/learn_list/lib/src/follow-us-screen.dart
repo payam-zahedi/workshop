@@ -34,10 +34,12 @@ class _FollowUsScreenState extends State<FollowUsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              "Connect with thousand of other Firekits users, to discuss and share anything about crytocurrency knowledge.",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.black38),
+            const Opacity(
+              opacity: 0.75,
+              child: Text(
+                "Connect with thousand of other Firekits users, to discuss and share anything about crytocurrency knowledge.",
+                textAlign: TextAlign.center,
+              ),
             ),
             const SizedBox(
               height: 25,
