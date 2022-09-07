@@ -29,7 +29,7 @@ linter:
     unnecessary_import: false
     implementation_imports: false
     unused_local_variable: false
-    avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
 # Additional information about this file can be found at

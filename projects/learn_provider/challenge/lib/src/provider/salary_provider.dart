@@ -1,0 +1,1 @@
+/// Create  SalaryProvider class that is extends [ChangeNotifier]
