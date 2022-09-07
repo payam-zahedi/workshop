@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:result/src/follow-us-screen.dart';
+import 'package:result/src/follow_us_screen.dart';
 
 void main() {
   runApp(const MyApp());
