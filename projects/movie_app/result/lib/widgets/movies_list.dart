@@ -1,14 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:result/models/movie.dart';
 import 'package:result/widgets/movie_detail.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-class MoviesListWidget extends StatelessWidget {
+final apiUrl = "http://www.omdbapi.com/?s=Batman&page=2&apikey=564727fa";
+
+class MoviesListWidget extends StatefulWidget {
   const MoviesListWidget({
     Key? key,
-    required this.movies,
   }) : super(key: key);
 
-  final List<Movie> movies;
+  @override
+  State<MoviesListWidget> createState() => _MoviesListWidgetState();
+}
+
+class _MoviesListWidgetState extends State<MoviesListWidget> {
+  List<Movie> movies = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _populateAllMovies();
+  }
+
+  void _populateAllMovies() async {
+    final resutlMovies = await _fetchAllMovies();
+    setState(() {
+      movies = resutlMovies;
+    });
+  }
+
+  Future<List<Movie>> _fetchAllMovies() async {
+    final response = await http.get(
+      Uri.parse(apiUrl),
+    );
+
+    if (response.statusCode == 200) {
+      final result = jsonDecode(response.body);
+      Iterable list = result["Search"];
+      return list.map((movie) => Movie.fromJson(movie)).toList();
+    } else {
+      throw Exception("Failed to load movies!");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

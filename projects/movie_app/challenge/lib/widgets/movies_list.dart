@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:result/models/movie.dart';
 import 'package:result/widgets/movie_detail.dart';
 
-class MoviesListWidget extends StatelessWidget {
+class MoviesListWidget extends StatefulWidget {
   const MoviesListWidget({
     Key? key,
-    required this.movies,
   }) : super(key: key);
 
-  final List<Movie> movies;
+  @override
+  State<MoviesListWidget> createState() => _MoviesListWidgetState();
+}
+
+class _MoviesListWidgetState extends State<MoviesListWidget> {
+  List<Movie> movies = [];
 
   @override
   Widget build(BuildContext context) {
